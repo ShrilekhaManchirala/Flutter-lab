@@ -1,0 +1,40 @@
+import"package:flutter/material.dart";
+void main(){
+    runApp(MyApp());
+}
+classMyApp extends StatelessWidget{
+    @override
+    Widgetbuild(BuildContextcontext){
+        returnMaterialApp(
+            home:ResponsiveHome(),
+        );
+    }
+}
+classResponsiveHome extends StatelessWidget{
+    @override
+    Widgetbuild(BuildContextcontext){
+        double screenWidth=MediaQuery.of(context).size.width;
+        double screenHeight=MediaQuery.of(context).size.height;
+        returnScaffold(
+            appBar:AppBar(
+                title:Text("MediaQueryResponsiveUI"),
+            ),
+            body:Center(
+                child:Container(
+                    width:screenWidth*0.8,
+                    height:screenHeight*0.4,
+                    color:Colors.blue,
+                    child:Center(
+                        child:Text(
+                            screenWidth>600?Large ScreenLayout":"Small Screen Layout",
+                            style:TextStyle(
+                            color:Colors.white,
+                            fontSize:screenWidth>600?24:16,
+                            ),
+                        ),
+                    ),
+                ),
+                ),
+            );
+            }
+}
