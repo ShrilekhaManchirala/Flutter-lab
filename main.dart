@@ -10,34 +10,31 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter Container Example'),
+          title: Text('Flutter Row Example'),
         ),
         body: Center(
-          child: Container(
-            width: 200,
-            height: 100,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Colors.blue,
-//Background color
-              borderRadius: BorderRadius.circular(15),
-              //Rounded corners
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 10,
-                  offset: Offset(2, 4),
-                ),
-              ],
-            ),
-            child: Text(
-              'Hello,Flutter!',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //Aligns children horizontally
+            crossAxisAlignment: CrossAxisAlignment.center,
+            //Aligns children vertically
+            children: [
+              Icon(
+                Icons.home,
+                color: Colors.blue,
+                size: 40,
               ),
-            ),
+              Text(
+                'Welcome!',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  //Action for button
+                },
+                child: Text('Click Me'),
+              ),
+            ],
           ),
         ),
       ),
